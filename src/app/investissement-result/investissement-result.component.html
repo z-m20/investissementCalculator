@@ -1,0 +1,24 @@
+@if( annualData !== undefined && annualData.length > 0 ){
+<table>
+ <thead>
+  <tr>
+   <th scope="col">Year</th>
+   <th scope="col">investissement value</th>
+   <th scope="col">interest(Year)</th>
+   <th scope="col">Total interest</th>
+   <th scope="col">Invested capital</th>
+  </tr>
+ </thead>
+ <tbody>
+  @for ( data of annualData ; track data.year) {
+  <tr>
+   <th scope="row">{{data.year}}</th>
+   <td>{{data.interestRate | currency: 'EUR'}}</td>
+   <td>{{data.totalInterest | currency: 'EUR'}}</td>
+   <td>{{data.totalAmountInvested | currency: 'EUR'}}</td>
+   <td>{{data.valueEndOfYear | currency: 'EUR'}}</td>
+  </tr>
+  }
+ </tbody>
+</table>
+}
